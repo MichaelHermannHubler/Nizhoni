@@ -1,6 +1,6 @@
 #pragma once
 
-#include "Core.h"
+#include "Nizhoni/Core.h"
 
 namespace Nizhoni {
 	class NIZHONI_API Application

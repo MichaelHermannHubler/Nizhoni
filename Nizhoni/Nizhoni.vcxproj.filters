@@ -4,6 +4,9 @@
     <Filter Include="Nizhoni">
       <UniqueIdentifier>{E465C675-5045-4511-595D-D0E7C5BBAB72}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Nizhoni\Event">
+      <UniqueIdentifier>{35C2E1ED-A182-5D24-6ABD-A6A1D63CA200}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\Nizhoni.h" />
@@ -16,9 +19,23 @@
     <ClInclude Include="src\Nizhoni\Entrypoint.h">
       <Filter>Nizhoni</Filter>
     </ClInclude>
+    <ClInclude Include="src\Nizhoni\Events\ApplicationEvent.h">
+      <Filter>Nizhoni\Event</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Nizhoni\Events\Event.h">
+      <Filter>Nizhoni\Event</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Nizhoni\Events\KeyEvent.h">
+      <Filter>Nizhoni\Event</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Nizhoni\Events\MouseEvent.h">
+      <Filter>Nizhoni\Event</Filter>
+    </ClInclude>
     <ClInclude Include="src\Nizhoni\Log.h">
       <Filter>Nizhoni</Filter>
     </ClInclude>
+    <ClInclude Include="src\Nizhoni\Core\KeyCodes.h" />
+    <ClInclude Include="src\Nizhoni\Core\MouseCodes.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\Nizhoni\Application.cpp">
