@@ -4,8 +4,11 @@
     <Filter Include="Nizhoni">
       <UniqueIdentifier>{E465C675-5045-4511-595D-D0E7C5BBAB72}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Nizhoni\Event">
-      <UniqueIdentifier>{35C2E1ED-A182-5D24-6ABD-A6A1D63CA200}</UniqueIdentifier>
+    <Filter Include="Nizhoni\Core">
+      <UniqueIdentifier>{BCD8DEB1-A83B-6E56-51C1-A60C3D033AD9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Nizhoni\Events">
+      <UniqueIdentifier>{48091AAA-34D7-0DB0-1D6B-7ED609D8E914}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -16,26 +19,31 @@
     <ClInclude Include="src\Nizhoni\Core.h">
       <Filter>Nizhoni</Filter>
     </ClInclude>
+    <ClInclude Include="src\Nizhoni\Core\KeyCodes.h">
+      <Filter>Nizhoni\Core</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Nizhoni\Core\MouseCodes.h">
+      <Filter>Nizhoni\Core</Filter>
+    </ClInclude>
     <ClInclude Include="src\Nizhoni\Entrypoint.h">
       <Filter>Nizhoni</Filter>
     </ClInclude>
     <ClInclude Include="src\Nizhoni\Events\ApplicationEvent.h">
-      <Filter>Nizhoni\Event</Filter>
+      <Filter>Nizhoni\Events</Filter>
     </ClInclude>
     <ClInclude Include="src\Nizhoni\Events\Event.h">
-      <Filter>Nizhoni\Event</Filter>
+      <Filter>Nizhoni\Events</Filter>
     </ClInclude>
     <ClInclude Include="src\Nizhoni\Events\KeyEvent.h">
-      <Filter>Nizhoni\Event</Filter>
+      <Filter>Nizhoni\Events</Filter>
     </ClInclude>
     <ClInclude Include="src\Nizhoni\Events\MouseEvent.h">
-      <Filter>Nizhoni\Event</Filter>
+      <Filter>Nizhoni\Events</Filter>
     </ClInclude>
     <ClInclude Include="src\Nizhoni\Log.h">
       <Filter>Nizhoni</Filter>
     </ClInclude>
-    <ClInclude Include="src\Nizhoni\Core\KeyCodes.h" />
-    <ClInclude Include="src\Nizhoni\Core\MouseCodes.h" />
+    <ClInclude Include="src\nipch.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\Nizhoni\Application.cpp">
@@ -44,5 +52,6 @@
     <ClCompile Include="src\Nizhoni\Log.cpp">
       <Filter>Nizhoni</Filter>
     </ClCompile>
+    <ClCompile Include="src\nipch.cpp" />
   </ItemGroup>
 </Project>

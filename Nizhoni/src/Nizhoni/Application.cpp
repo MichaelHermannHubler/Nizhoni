@@ -1,3 +1,4 @@
+#include "nipch.h"
 #include "Application.h"
 
 #include "Nizhoni/Events/ApplicationEvent.h"

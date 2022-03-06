@@ -1,7 +1,5 @@
 #pragma once
 
-#include <sstream>
-
 #include "Nizhoni/Events/Event.h""
 #include "Nizhoni/Core/KeyCodes.h"
 

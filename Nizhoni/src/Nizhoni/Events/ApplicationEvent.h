@@ -1,7 +1,6 @@
 #pragma once
 
 #include "Nizhoni/Events/Event.h"
-#include <sstream>
 
 namespace Nizhoni {
 

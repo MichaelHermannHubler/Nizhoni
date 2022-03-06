@@ -16,6 +16,9 @@ project "Nizhoni"
 	
 	targetdir ("bin/" .. outputdir .. "/%{prj.name}")
 	objdir ("bin-obj/" .. outputdir .. "/%{prj.name}")
+	
+	pchheader "nipch.h"
+	pchsource "Nizhoni/src/nipch.cpp"
 
 	files {
 		"%{prj.name}/src/**.h",

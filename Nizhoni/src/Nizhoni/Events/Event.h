@@ -1,9 +1,8 @@
 #pragma once
+#include "nipch.h"
 
 #include "Nizhoni/Core.h"
 
-#include <string>
-#include <functional>
 
 namespace Nizhoni {
 	enum class EventType
