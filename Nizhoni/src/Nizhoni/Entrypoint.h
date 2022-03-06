@@ -5,8 +5,13 @@
 extern Nizhoni::Application* Nizhoni::CreateApplication();
 
 int main(int argc, char** argv) {
-	printf("Nizhoni Engine");
+	Nizhoni::Log::Init();
+
+	NI_CORE_INFO("Logger initialized");
+	NI_TRACE("Logger initialized");
+
 	auto app = Nizhoni::CreateApplication();
+	NI_CORE_INFO("Application starting");
 	app->Run();
 	delete app;
 }

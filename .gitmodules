@@ -1,0 +1,3 @@
+[submodule "Nizhoni/vendor/spdlog"]
+	path = Nizhoni/vendor/spdlog
+	url = https://github.com/gabime/spdlog
