@@ -11,3 +11,11 @@
 #endif
 
 #define BIT(x) (1 << x)
+
+#ifdef NI_ENABLE_ASSERTS
+	#define NI_ASSERT(x, ...) { if(!(x)) {NI_ERROR("Assertion Failed: {0}", __VA_ARGS__); __debugbreak(); } }
+	#define NI_CORE_ASSERT(x, ...) { if(!(x)) {NI_CORE_ERROR("Assertion Failed: {0}", __VA_ARGS__); __debugbreak(); } }
+#else
+	#define NI_ASSERT(x, ...)
+	#define NI_CORE_ASSERT(x, ...)
+#endif

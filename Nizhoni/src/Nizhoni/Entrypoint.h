@@ -11,7 +11,6 @@ int main(int argc, char** argv) {
 	NI_TRACE("Logger initialized");
 
 	auto app = Nizhoni::CreateApplication();
-	NI_CORE_INFO("Application starting");
 	app->Run();
 	delete app;
 }
