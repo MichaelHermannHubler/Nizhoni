@@ -1,10 +1,11 @@
 #pragma once
 
+#include "Window.h"
 #include "Nizhoni/Core.h"
-#include "Events/Event.h"
+#include "Nizhoni/LayerStack.h"
+#include "Nizhoni/Events/Event.h"
 #include "Nizhoni/Events/ApplicationEvent.h"
 
-#include "Window.h"
 
 namespace Nizhoni {
 	class NIZHONI_API Application
@@ -12,6 +13,7 @@ namespace Nizhoni {
 	private:
 		std::unique_ptr<Window> m_Window;
 		bool m_Running = true;
+		LayerStack m_LayerStack;
 
 
 	public:
@@ -21,6 +23,9 @@ namespace Nizhoni {
 		void Run();
 
 		void OnEvent(Event& e);
+
+		void PushLayer(Layer* layer);
+		void PushOverlay(Layer* layer);
 
 	private:
 		bool OnWindowClose(WindowCloseEvent& e);

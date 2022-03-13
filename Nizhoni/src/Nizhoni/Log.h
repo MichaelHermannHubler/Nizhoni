@@ -50,7 +50,7 @@ namespace Nizhoni {
 #define NI_CORE_TRACE(...)		if(::Nizhoni::Log::GetCoreLogLevel() == 0){ ::Nizhoni::Log::GetCoreLogger()->trace(__VA_ARGS__); }
 
 #define NI_CRITICAL(...)		::Nizhoni::Log::GetClientLogger()->critical(__VA_ARGS__)
-#define NI_ERROR(...)			if(::Nizhoni::Log::GetClientLogLevel <= 3){ ::Nizhoni::Log::GetClientLogger()->error(__VA_ARGS__); }
-#define NI_WARN(...)			if(::Nizhoni::Log::GetClientLogLevel <= 2){ ::Nizhoni::Log::GetClientLogger()->warn(__VA_ARGS__); }
-#define NI_INFO(...)			if(::Nizhoni::Log::GetClientLogLevel <= 1){ ::Nizhoni::Log::GetClientLogger()->info(__VA_ARGS__); }
-#define NI_TRACE(...)			if(::Nizhoni::Log::GetClientLogLevel == 0){ ::Nizhoni::Log::GetClientLogger()->trace(__VA_ARGS__); }
+#define NI_ERROR(...)			if(::Nizhoni::Log::GetClientLogLevel() <= 3){ ::Nizhoni::Log::GetClientLogger()->error(__VA_ARGS__); }
+#define NI_WARN(...)			if(::Nizhoni::Log::GetClientLogLevel() <= 2){ ::Nizhoni::Log::GetClientLogger()->warn(__VA_ARGS__); }
+#define NI_INFO(...)			if(::Nizhoni::Log::GetClientLogLevel() <= 1){ ::Nizhoni::Log::GetClientLogger()->info(__VA_ARGS__); }
+#define NI_TRACE(...)			if(::Nizhoni::Log::GetClientLogLevel() == 0){ ::Nizhoni::Log::GetClientLogger()->trace(__VA_ARGS__); }

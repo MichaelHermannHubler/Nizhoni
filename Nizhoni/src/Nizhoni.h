@@ -2,8 +2,8 @@
 
 // For use by Nizhoni applications
 
-#include <stdio.h>
 #include "Nizhoni/Application.h"
+#include "Nizhoni/Layer.h"
 #include "Nizhoni/Log.h"
 
 // ----- Entry Point -----------------
