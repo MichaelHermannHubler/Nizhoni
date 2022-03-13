@@ -45,7 +45,7 @@
     </ClInclude>
     <ClInclude Include="src\nipch.h" />
     <ClInclude Include="src\Nizhoni\Window.h" />
-    <ClInclude Include="src\Nizhoni\Platform\Windows\WindowsWindow.h" />
+    <ClInclude Include="src\Platform\Windows\WindowsWindow.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\Nizhoni\Application.cpp">
@@ -55,6 +55,6 @@
       <Filter>Nizhoni</Filter>
     </ClCompile>
     <ClCompile Include="src\nipch.cpp" />
-    <ClCompile Include="src\Nizhoni\Platform\Windows\WindowsWindow.cpp" />
+    <ClCompile Include="src\Platform\Windows\WindowsWindow.cpp" />
   </ItemGroup>
 </Project>
