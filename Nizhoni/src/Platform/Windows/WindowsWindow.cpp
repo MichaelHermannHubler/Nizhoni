@@ -5,6 +5,8 @@
 #include "Nizhoni/Events/KeyEvent.h"
 #include "Nizhoni/Events/MouseEvent.h"
 
+#include <glad/glad.h>
+
 namespace Nizhoni {
 	static bool s_GLFWInitialized = false;
 
@@ -44,6 +46,10 @@ namespace Nizhoni {
 
 		m_Window = glfwCreateWindow((int)m_Data.Width, (int)m_Data.Height, m_Data.Title.c_str(), nullptr, nullptr);
 		glfwMakeContextCurrent(m_Window);
+		int status = gladLoadGLLoader((GLADloadproc)glfwGetProcAddress);
+
+		NI_CORE_ASSERT(status, "Could not initialize Glad")
+
 		glfwSetWindowUserPointer(m_Window, &m_Data);
 		SetVSync(true);
 

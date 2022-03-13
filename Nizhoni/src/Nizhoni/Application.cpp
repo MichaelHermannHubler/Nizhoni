@@ -4,7 +4,7 @@
 #include "Nizhoni/Events/ApplicationEvent.h"
 #include "Nizhoni/Log.h"
 
-#include <GLFW/glfw3.h>
+#include <glad/glad.h>
 
 namespace Nizhoni {
 #define BIND_EVENT_FN(x) std::bind(&x, this, std::placeholders::_1)

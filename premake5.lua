@@ -10,9 +10,11 @@ workspace "Nizhoni"
 outputdir = "%{cfg.buildcfg}-%{cfg.system}-%{cfg.architecture}"
 
 IncludeDir = {}
-IncludeDir["GLFW"] = "Nizhoni/vendor/glfw/include"
+IncludeDir["GLFW"] = "Nizhoni/vendor/GLFW/include"
+IncludeDir["Glad"] = "Nizhoni/vendor/Glad/include"
 
-include "Nizhoni/vendor/glfw"
+include "Nizhoni/vendor/GLFW"
+include "Nizhoni/vendor/Glad"
 
 project "Nizhoni"
 	location "Nizhoni"
@@ -33,11 +35,13 @@ project "Nizhoni"
 	includedirs {
 		"%{prj.name}/src",
 		"%{prj.name}/vendor/spdlog/include",
-		"%{IncludeDir.GLFW}"
+		"%{IncludeDir.GLFW}",
+		"%{IncludeDir.Glad}"
 	}
 	
 	links {
 		"GLFW",
+		"Glad",
 		"opengl32.lib"
 	}
 
@@ -48,7 +52,8 @@ project "Nizhoni"
 
 		defines {
 			"NI_PLATFORM_WINDOWS",
-			"NI_BUILD_DLL"
+			"NI_BUILD_DLL",
+			"GLFW_INCLUDE_NONE"
 		}
 
 		postbuildcommands {
