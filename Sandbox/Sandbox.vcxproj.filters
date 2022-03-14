@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Nizhoni">
+      <UniqueIdentifier>{E465C675-5045-4511-595D-D0E7C5BBAB72}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Nizhoni\vendor">
+      <UniqueIdentifier>{C1F3371B-ADC1-2B21-9655-9C4782C20786}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Nizhoni\vendor\SoLoud">
+      <UniqueIdentifier>{A6989BFD-1205-57F8-DBF8-EE5547247960}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src">
+      <UniqueIdentifier>{2DAB880B-99B4-887C-2230-9F7C8E38947C}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="src\App.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="..\Nizhoni\vendor\SoLoud\include">
+      <Filter>Nizhoni\vendor\SoLoud</Filter>
+    </None>
+  </ItemGroup>
+</Project>

@@ -30,12 +30,13 @@ namespace Nizhoni {
 		layer->OnAttach();
 	}
 
-	void Application::LoadAudioAsset() {
-		m_AudioEngine->LoadAsset(nullptr, nullptr);
+	void Application::LoadAudioAsset(const char* identifier, const char* filename) {
+		m_AudioEngine->LoadAsset(identifier, filename);
 	}
-	void Application::PlayAudioAsset() {
-		m_AudioEngine->PlayAsset(nullptr);
-	}
+
+	void Application::PlayAudioAsset(const char* identifier) {
+		m_AudioEngine->PlayAsset(identifier);
+	} 
 
 	void Application::SayText(const char* text) {
 		m_AudioEngine->SayText(text);

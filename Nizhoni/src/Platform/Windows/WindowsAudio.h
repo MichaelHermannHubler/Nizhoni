@@ -9,11 +9,17 @@ namespace Nizhoni {
 	{
 	private:
 		SoLoud::Soloud m_Engine;
+		void* m_EngineMutex;
 	public:
 		WindowsAudio(const AudioProps& props);
+		~WindowsAudio();
 
-		virtual void LoadAsset(const char* identifier, const std::string & Filename) override;
+		virtual void LoadAsset(const char* identifier, const char* Filename) override;
 		virtual void PlayAsset(const char* identifier) override;
 		virtual void SayText(const char* Text) override;
+
+	private:
+		void PlayAssetThreaded(std::string fileName);
+		void SayTextThreaded(const char* Text);
 	};
 }

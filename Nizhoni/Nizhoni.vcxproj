@@ -167,20 +167,20 @@
     <ClInclude Include="src\Nizhoni\LayerStack.h" />
     <ClInclude Include="src\Nizhoni\Log.h" />
     <ClInclude Include="src\Nizhoni\Window.h" />
+    <ClInclude Include="src\Platform\Windows\WindowsAudio.h" />
     <ClInclude Include="src\Platform\Windows\WindowsWindow.h" />
     <ClInclude Include="src\nipch.h" />
-    <ClInclude Include="WindowsAudio.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\Nizhoni\Application.cpp" />
     <ClCompile Include="src\Nizhoni\Layer.cpp" />
     <ClCompile Include="src\Nizhoni\LayerStack.cpp" />
     <ClCompile Include="src\Nizhoni\Log.cpp" />
+    <ClCompile Include="src\Platform\Windows\WindowsAudio.cpp" />
     <ClCompile Include="src\Platform\Windows\WindowsWindow.cpp" />
     <ClCompile Include="src\nipch.cpp">
       <PrecompiledHeader>Create</PrecompiledHeader>
     </ClCompile>
-    <ClCompile Include="WindowsAudio.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="vendor\GLFW\GLFW.vcxproj">

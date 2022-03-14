@@ -28,8 +28,8 @@ namespace Nizhoni {
 		void PushLayer(Layer* layer);
 		void PushOverlay(Layer* layer);
 
-		void LoadAudioAsset();
-		void PlayAudioAsset();
+		void LoadAudioAsset(const char* identifier, const char* filename);
+		void PlayAudioAsset(const char* identifier);
 		void SayText(const char* text);
 	private:
 		bool OnWindowClose(WindowCloseEvent& e);

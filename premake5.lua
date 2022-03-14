@@ -92,12 +92,14 @@ project "Sandbox"
 
 	files {
 		"%{prj.name}/src/**.h",
-		"%{prj.name}/src/**.cpp"
+		"%{prj.name}/src/**.cpp",
+		"%{IncludeDir.SoLoud}"
 	}
 
 	includedirs {
 		"Nizhoni/vendor/spdlog/include",
-		"Nizhoni/src"
+		"Nizhoni/vendor/SoLoud/include",
+		"Nizhoni/src",
 	}
 
 	links {
