@@ -12,6 +12,8 @@ namespace Nizhoni {
 	Application::Application() {
 		m_Window = std::unique_ptr<Window>(Window::Create());
 		m_Window->SetEventCallback(BIND_EVENT_FN(Application::OnEvent));
+
+		m_AudioEngine = std::unique_ptr<Audio>(Audio::Create());
 	}
 
 	Application::~Application() {
@@ -26,6 +28,17 @@ namespace Nizhoni {
 	void Application::PushOverlay(Layer* layer) {
 		m_LayerStack.PushOverlay(layer);
 		layer->OnAttach();
+	}
+
+	void Application::LoadAudioAsset() {
+		m_AudioEngine->LoadAsset(nullptr, nullptr);
+	}
+	void Application::PlayAudioAsset() {
+		m_AudioEngine->PlayAsset(nullptr);
+	}
+
+	void Application::SayText(const char* text) {
+		m_AudioEngine->SayText(text);
 	}
 
 	void Application::OnEvent(Event& e)

@@ -22,6 +22,7 @@ public:
 		NI_SET_LOGLEVEL(NI_LOG_LEVEL_INFO);
 
 		PushLayer(new ExampleLayer);
+		SayText("Beep");
 	}
 
 	~App() {
