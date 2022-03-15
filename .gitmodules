@@ -4,3 +4,6 @@
 [submodule "Nizhoni/vendor/glfw"]
 	path = Nizhoni/vendor/glfw
 	url = https://github.com/TheCherno/glfw
+[submodule "Nizhoni/vendor/ImGui"]
+	path = Nizhoni/vendor/ImGui
+	url = https://github.com/ocornut/imgui

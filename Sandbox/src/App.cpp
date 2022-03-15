@@ -22,10 +22,10 @@ public:
 		NI_SET_LOGLEVEL(NI_LOG_LEVEL_WARN);
 
 		PushLayer(new ExampleLayer);
-		SayText("Beep Boop Beep Beep Boopity Boop");
+		SayText("Beep Boop Beep Boopity Boop");
 
 		LoadAudioAsset("aud_beep", "C:\\Users\\micha\\Downloads\\FreeSFX\\FreeSFX\\GameSFX\\Alarms Blip Beeps\\Retro Alarm 02.wav");
-		//PlayAudioAsset("aud_beep");
+		PlayAudioAsset("aud_beep");
 		//Sleep(200);
 		//PlayAudioAsset("aud_beep");
 		
