@@ -36,6 +36,7 @@ namespace Nizhoni {
 
 		void LoadAudioAsset(const char* identifier, const char* filename);
 		void PlayAudioAsset(const char* identifier);
+		void SetLoopingBackgroundAsset(const char* identifier);
 		void SayText(const char* text);
 
 		void PauseAudio();

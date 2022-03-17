@@ -41,7 +41,11 @@ namespace Nizhoni {
 
 	void Application::PlayAudioAsset(const char* identifier) {
 		m_AudioEngine->PlayAsset(identifier);
-	} 
+	}
+
+	void Application::SetLoopingBackgroundAsset(const char* identifier) {
+		m_AudioEngine->SetLoopingBackgroundAsset(identifier);
+	}
 
 	void Application::SayText(const char* text) {
 		m_AudioEngine->SayText(text);

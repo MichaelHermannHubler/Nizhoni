@@ -9,4 +9,7 @@
 #include "Nizhoni/ImGui/ImGuiLayer.h"
 
 // ----- Entry Point -----------------
+#include "soloud_wav.h"
+
+// ----- Entry Point -----------------
 #include "Nizhoni/Entrypoint.h"

@@ -4,7 +4,6 @@
 #include "soloud.h"
 #include "soloud_speech.h"
 #include "soloud_thread.h"
-#include "soloud_wav.h"
 #include "soloud_file.h"
 #include "soloud_audiosource.h"
 
@@ -31,6 +30,7 @@ namespace Nizhoni {
 	}
 
 	WindowsAudio::~WindowsAudio() {
+		m_Backgound->stop();
 		SoLoud::Thread::lockMutex(m_EngineMutex);
 		m_Engine.deinit();
 		SoLoud::Thread::unlockMutex(m_EngineMutex);
@@ -77,6 +77,33 @@ namespace Nizhoni {
 				isPaused = false;
 			}
 
+			SoLoud::Thread::sleep(100);
+		}
+	}
+
+	void WindowsAudio::SetLoopingBackgroundAsset(const char* identifier) {
+		std::string fileName = m_SoundLibrary.at(identifier);
+
+		std::thread background_thread([this](std::string fileName) { this->PlayLoopedAssetThreaded(fileName); }, fileName); 
+		// TODO: Fadin/Fadeout
+		background_thread.detach();
+	}
+
+	void WindowsAudio::PlayLoopedAssetThreaded(std::string fileName) {
+		SoLoud::Wav sound;
+
+		sound.load(fileName.c_str());
+		sound.setVolume(0.5); //TODO: CHANGEABLE TO 0.-1.
+		sound.setLooping(true);
+
+		double t = sound.getLoopPoint();
+		sound.setLoopPoint(t + 0.05f);
+
+		SoLoud::Thread::lockMutex(m_EngineMutex);
+		auto handle = m_Engine.play(sound);
+		SoLoud::Thread::unlockMutex(m_EngineMutex);
+
+		while (m_Engine.getActiveVoiceCount() > 0) {
 			SoLoud::Thread::sleep(100);
 		}
 	}

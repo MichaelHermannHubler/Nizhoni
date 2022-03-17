@@ -27,6 +27,7 @@ namespace Nizhoni {
 
 		virtual void LoadAsset(const char* identifier, const char* Filename) = 0;
 		virtual void PlayAsset(const char* identifier) = 0;
+		virtual void SetLoopingBackgroundAsset(const char* identifier) = 0;
 		virtual void SayText(const char* Text) = 0;
 
 		inline void Pause() { b_Pause = true; }
