@@ -12,6 +12,12 @@ namespace Nizhoni {
 	class NIZHONI_API Application
 	{
 	private:
+		static Application* s_Instance;
+
+	public:
+		inline static Application& Get() { return *s_Instance; }
+
+	private:
 		std::unique_ptr<Window> m_Window;
 		bool m_Running = true;
 		LayerStack m_LayerStack;
@@ -31,6 +37,8 @@ namespace Nizhoni {
 		void LoadAudioAsset(const char* identifier, const char* filename);
 		void PlayAudioAsset(const char* identifier);
 		void SayText(const char* text);
+
+		inline Window& GetWindow() { return *m_Window; }
 	private:
 		bool OnWindowClose(WindowCloseEvent& e);
 	};

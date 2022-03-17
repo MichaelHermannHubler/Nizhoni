@@ -6,5 +6,7 @@
 #include "Nizhoni/Layer.h"
 #include "Nizhoni/Log.h"
 
+#include "Nizhoni/ImGui/ImGuiLayer.h"
+
 // ----- Entry Point -----------------
 #include "Nizhoni/Entrypoint.h"

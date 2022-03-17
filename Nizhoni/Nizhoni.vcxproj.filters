@@ -16,6 +16,12 @@
     <Filter Include="Platform\Windows">
       <UniqueIdentifier>{64FBD71A-50F4-F66C-7926-DCF1657ED678}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Nizhoni\ImGui">
+      <UniqueIdentifier>{5e011369-650d-4c25-ac91-0111dc8d8c2f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Platform\OpenGL">
+      <UniqueIdentifier>{b61a226c-d683-44f6-890a-5f439a89adf3}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\Nizhoni.h" />
@@ -68,6 +74,12 @@
       <Filter>Platform\Windows</Filter>
     </ClInclude>
     <ClInclude Include="src\nipch.h" />
+    <ClInclude Include="src\Nizhoni\ImGui\ImGuiLayer.h">
+      <Filter>Nizhoni\ImGui</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Platform\OpenGL\imgui_impl_glfw.h" />
+    <ClInclude Include="src\Platform\OpenGL\imgui_impl_opengl3.h" />
+    <ClInclude Include="src\Platform\OpenGL\imgui_impl_opengl3_loader.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\Nizhoni\Application.cpp">
@@ -89,5 +101,10 @@
       <Filter>Platform\Windows</Filter>
     </ClCompile>
     <ClCompile Include="src\nipch.cpp" />
+    <ClCompile Include="src\Nizhoni\ImGui\ImGuiLayer.cpp">
+      <Filter>Nizhoni\ImGui</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Platform\OpenGL\imgui_impl_glfw.cpp" />
+    <ClCompile Include="src\Platform\OpenGL\imgui_impl_opengl3.cpp" />
   </ItemGroup>
 </Project>

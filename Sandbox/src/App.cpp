@@ -18,14 +18,16 @@ public:
 class App : public Nizhoni::Application {
 public:
 	App() {
-		NI_SET_CORE_LOGLEVEL(NI_LOG_LEVEL_TRACE);
+		NI_SET_CORE_LOGLEVEL(NI_LOG_LEVEL_WARN);
 		NI_SET_LOGLEVEL(NI_LOG_LEVEL_WARN);
 
 		PushLayer(new ExampleLayer);
-		SayText("Beep Boop Beep Boopity Boop");
+		PushOverlay(new Nizhoni::ImGuiLayer());
+
+		//SayText("Beep Boop Beep Boopity Boop");
 
 		LoadAudioAsset("aud_beep", "C:\\Users\\micha\\Downloads\\FreeSFX\\FreeSFX\\GameSFX\\Alarms Blip Beeps\\Retro Alarm 02.wav");
-		PlayAudioAsset("aud_beep");
+		//PlayAudioAsset("aud_beep");
 		//Sleep(200);
 		//PlayAudioAsset("aud_beep");
 		

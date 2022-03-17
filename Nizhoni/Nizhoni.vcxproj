@@ -152,6 +152,7 @@
     </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="src\Nizhoni\ImGui\ImGuiLayer.h" />
     <ClInclude Include="src\Nizhoni.h" />
     <ClInclude Include="src\Nizhoni\Application.h" />
     <ClInclude Include="src\Nizhoni\Audio.h" />
@@ -167,15 +168,21 @@
     <ClInclude Include="src\Nizhoni\LayerStack.h" />
     <ClInclude Include="src\Nizhoni\Log.h" />
     <ClInclude Include="src\Nizhoni\Window.h" />
+    <ClInclude Include="src\Platform\OpenGL\imgui_impl_glfw.h" />
+    <ClInclude Include="src\Platform\OpenGL\imgui_impl_opengl3.h" />
+    <ClInclude Include="src\Platform\OpenGL\imgui_impl_opengl3_loader.h" />
     <ClInclude Include="src\Platform\Windows\WindowsAudio.h" />
     <ClInclude Include="src\Platform\Windows\WindowsWindow.h" />
     <ClInclude Include="src\nipch.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="src\Nizhoni\ImGui\ImGuiLayer.cpp" />
     <ClCompile Include="src\Nizhoni\Application.cpp" />
     <ClCompile Include="src\Nizhoni\Layer.cpp" />
     <ClCompile Include="src\Nizhoni\LayerStack.cpp" />
     <ClCompile Include="src\Nizhoni\Log.cpp" />
+    <ClCompile Include="src\Platform\OpenGL\imgui_impl_glfw.cpp" />
+    <ClCompile Include="src\Platform\OpenGL\imgui_impl_opengl3.cpp" />
     <ClCompile Include="src\Platform\Windows\WindowsAudio.cpp" />
     <ClCompile Include="src\Platform\Windows\WindowsWindow.cpp" />
     <ClCompile Include="src\nipch.cpp">
