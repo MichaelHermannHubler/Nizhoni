@@ -24,6 +24,12 @@ namespace Nizhoni {
 		m_EngineMutex = SoLoud::Thread::createMutex();
 	}
 
+	void WindowsAudio::SetPause(SoLoud::handle handle, bool pause) {
+		SoLoud::Thread::lockMutex(m_EngineMutex);
+		m_Engine.setPause(handle, pause);
+		SoLoud::Thread::unlockMutex(m_EngineMutex);
+	}
+
 	WindowsAudio::~WindowsAudio() {
 		SoLoud::Thread::lockMutex(m_EngineMutex);
 		m_Engine.deinit();
@@ -37,14 +43,11 @@ namespace Nizhoni {
 	/// </summary>
 	/// <param name="identifier"></param>
 	/// <param name="filename"></param>
-	void WindowsAudio::LoadAsset(const char* identifier, const char* filename)
-	{
+	void WindowsAudio::LoadAsset(const char* identifier, const char* filename) {
 		m_SoundLibrary.insert_or_assign(identifier, filename);
 	}
 
-
-	void WindowsAudio::PlayAsset(const char* identifier)
-	{		
+	void WindowsAudio::PlayAsset(const char* identifier) {
 		std::string fileName = m_SoundLibrary.at(identifier);
 
 		std::thread t1([this](std::string fileName) { this->PlayAssetThreaded(fileName); }, fileName);
@@ -58,16 +61,27 @@ namespace Nizhoni {
 		sound.setVolume(1); //TODO: CHANGEABLE TO 0.-1.
 
 		SoLoud::Thread::lockMutex(m_EngineMutex);
-		m_Engine.play(sound);
+		auto handle = m_Engine.play(sound);
 		SoLoud::Thread::unlockMutex(m_EngineMutex);
 
-		while (m_Engine.getActiveVoiceCount() > 0) {
+		bool isPaused = false;
+
+		while (m_Engine.getActiveVoiceCount() > 0 || isPaused) {
+			// Handle Pausing of Sample
+			if (b_Pause && !isPaused) {
+				SetPause(handle, true);
+				isPaused = true;
+			}
+			else if (isPaused && !b_Pause) {
+				SetPause(handle, false);
+				isPaused = false;
+			}
+
 			SoLoud::Thread::sleep(100);
 		}
 	}
 
-	void WindowsAudio::SayText(const char* Text)
-	{
+	void WindowsAudio::SayText(const char* Text) {
 		std::thread t1([this](const char* Text) { this->SayTextThreaded(Text); }, Text);
 		t1.detach();
 	}
@@ -79,11 +93,21 @@ namespace Nizhoni {
 		speech.setVolume(1); //TODO: CHANGEABLE TO 0.-1.
 
 		SoLoud::Thread::lockMutex(m_EngineMutex);
-		m_Engine.play(speech);
+		auto handle = m_Engine.play(speech);
 		SoLoud::Thread::unlockMutex(m_EngineMutex);
 
-		while (m_Engine.getActiveVoiceCount() > 0)
-		{
+		bool isPaused = false;
+
+		while (m_Engine.getActiveVoiceCount() > 0) {
+			// Handle Pausing of Sample
+			if (b_Pause && !isPaused) {
+				SetPause(handle, true);
+				isPaused = true;
+			}
+			else if (isPaused && !b_Pause) {
+				SetPause(handle, false);
+				isPaused = false;
+			}
 			SoLoud::Thread::sleep(100);
 		}
 	}

@@ -38,6 +38,9 @@ namespace Nizhoni {
 		void PlayAudioAsset(const char* identifier);
 		void SayText(const char* text);
 
+		void PauseAudio();
+		void UnpauseAudio();
+
 		inline Window& GetWindow() { return *m_Window; }
 	private:
 		bool OnWindowClose(WindowCloseEvent& e);

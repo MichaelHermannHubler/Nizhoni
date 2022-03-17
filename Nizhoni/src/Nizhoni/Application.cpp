@@ -47,6 +47,14 @@ namespace Nizhoni {
 		m_AudioEngine->SayText(text);
 	}
 
+	void Application::PauseAudio() {
+		m_AudioEngine->Pause();
+	}
+
+	void Application::UnpauseAudio() {
+		m_AudioEngine->UnPause();
+	}
+
 	void Application::OnEvent(Event& e)
 	{
 		EventDispatcher dispatcher(e);

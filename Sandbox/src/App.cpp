@@ -27,8 +27,11 @@ public:
 		//SayText("Beep Boop Beep Boopity Boop");
 
 		LoadAudioAsset("aud_beep", "C:\\Users\\micha\\Downloads\\FreeSFX\\FreeSFX\\GameSFX\\Alarms Blip Beeps\\Retro Alarm 02.wav");
-		//PlayAudioAsset("aud_beep");
-		//Sleep(200);
+		PlayAudioAsset("aud_beep");
+		Sleep(300);
+		PauseAudio();
+		Sleep(500);
+		UnpauseAudio();
 		//PlayAudioAsset("aud_beep");
 		
 	}

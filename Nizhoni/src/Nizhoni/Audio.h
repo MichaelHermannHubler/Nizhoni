@@ -19,6 +19,7 @@ namespace Nizhoni {
 	class NIZHONI_API Audio
 	{
 	protected:
+		bool b_Pause = false;
 		std::unordered_map<std::string, std::string> m_SoundLibrary;
 
 	public:
@@ -27,6 +28,9 @@ namespace Nizhoni {
 		virtual void LoadAsset(const char* identifier, const char* Filename) = 0;
 		virtual void PlayAsset(const char* identifier) = 0;
 		virtual void SayText(const char* Text) = 0;
+
+		inline void Pause() { b_Pause = true; }
+		inline void UnPause() { b_Pause = false; }
 
 		static Audio* Create(const AudioProps& props = AudioProps());
 	};

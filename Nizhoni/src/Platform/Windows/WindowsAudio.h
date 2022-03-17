@@ -21,5 +21,6 @@ namespace Nizhoni {
 	private:
 		void PlayAssetThreaded(std::string fileName);
 		void SayTextThreaded(const char* Text);
+		void WindowsAudio::SetPause(SoLoud::handle handle, bool pause);
 	};
 }
