@@ -30,8 +30,9 @@ namespace Nizhoni {
 	}
 
 	WindowsAudio::~WindowsAudio() {
-		m_Backgound->stop();
+		m_Engine.stopAll();
 		SoLoud::Thread::lockMutex(m_EngineMutex);
+		m_Engine.stopAll();
 		m_Engine.deinit();
 		SoLoud::Thread::unlockMutex(m_EngineMutex);
 		SoLoud::Thread::destroyMutex(m_EngineMutex);
