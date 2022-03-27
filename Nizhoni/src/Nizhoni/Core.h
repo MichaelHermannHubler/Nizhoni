@@ -19,3 +19,5 @@
 	#define NI_ASSERT(x, ...)
 	#define NI_CORE_ASSERT(x, ...)
 #endif
+
+#define NI_BIND_EVENT_FN(x) std::bind(&x, this, std::placeholders::_1)

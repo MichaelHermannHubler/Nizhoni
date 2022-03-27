@@ -29,7 +29,7 @@ public:
 		LoadAudioAsset("aud_beep", "C:\\Users\\micha\\Downloads\\FreeSFX\\FreeSFX\\GameSFX\\Alarms Blip Beeps\\Retro Alarm 02.wav");
 		LoadAudioAsset("aud_background", "C:\\Users\\micha\\Downloads\\FreeSFX\\FreeSFX\\GameSFX\\Ambience\\Retro Ambience 11.wav");
 		//PlayAudioAsset("aud_beep");
-		SetLoopingBackgroundAsset("aud_background");
+		//SetLoopingBackgroundAsset("aud_background");
 		//PauseAudio();
 		//UnpauseAudio();
 		//PlayAudioAsset("aud_beep");
