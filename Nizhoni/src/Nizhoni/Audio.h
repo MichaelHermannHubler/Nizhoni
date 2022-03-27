@@ -12,7 +12,6 @@ namespace Nizhoni {
 	{
 		AudioProps()
 		{
-			const char* Name;
 		}
 	};
 
