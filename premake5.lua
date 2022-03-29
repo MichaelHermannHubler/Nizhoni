@@ -15,10 +15,10 @@ IncludeDir["Glad"] = "Nizhoni/vendor/Glad/include"
 IncludeDir["SoLoud"] = "Nizhoni/vendor/SoLoud/include"
 IncludeDir["ImGui"] = "Nizhoni/vendor/ImGui"
 
-include "Nizhoni/vendor/GLFW"
-include "Nizhoni/vendor/Glad"
-include "Nizhoni/vendor/SoLoud"
-include "Nizhoni/vendor/ImGui"
+include "Nizhoni/vendor/_premakes/GLFW"
+include "Nizhoni/vendor/_premakes/Glad"
+include "Nizhoni/vendor/_premakes/SoLoud"
+include "Nizhoni/vendor/_premakes/ImGui"
 
 project "Nizhoni"
 	location "Nizhoni"
@@ -117,6 +117,10 @@ project "Sandbox"
 
 		defines {
 			"NI_PLATFORM_WINDOWS",
+		}
+
+		postbuildcommands {
+			("{COPYDIR} ../Sandbox/Data ../bin/" .. outputdir .. "/Sandbox/Data")
 		}
 
 	filter "configurations:Debug"

@@ -152,7 +152,6 @@
     </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClInclude Include="src\Nizhoni\ImGui\ImGuiLayer.h" />
     <ClInclude Include="src\Nizhoni.h" />
     <ClInclude Include="src\Nizhoni\Application.h" />
     <ClInclude Include="src\Nizhoni\Audio.h" />
@@ -164,6 +163,7 @@
     <ClInclude Include="src\Nizhoni\Events\Event.h" />
     <ClInclude Include="src\Nizhoni\Events\KeyEvent.h" />
     <ClInclude Include="src\Nizhoni\Events\MouseEvent.h" />
+    <ClInclude Include="src\Nizhoni\ImGui\ImGuiLayer.h" />
     <ClInclude Include="src\Nizhoni\Layer.h" />
     <ClInclude Include="src\Nizhoni\LayerStack.h" />
     <ClInclude Include="src\Nizhoni\Log.h" />
@@ -176,8 +176,8 @@
     <ClInclude Include="src\nipch.h" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="src\Nizhoni\ImGui\ImGuiLayer.cpp" />
     <ClCompile Include="src\Nizhoni\Application.cpp" />
+    <ClCompile Include="src\Nizhoni\ImGui\ImGuiLayer.cpp" />
     <ClCompile Include="src\Nizhoni\Layer.cpp" />
     <ClCompile Include="src\Nizhoni\LayerStack.cpp" />
     <ClCompile Include="src\Nizhoni\Log.cpp" />
@@ -190,16 +190,16 @@
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="vendor\GLFW\GLFW.vcxproj">
+    <ProjectReference Include="vendor\_premakes\GLFW\GLFW.vcxproj">
       <Project>{154B857C-0182-860D-AA6E-6C109684020F}</Project>
     </ProjectReference>
-    <ProjectReference Include="vendor\Glad\Glad.vcxproj">
+    <ProjectReference Include="vendor\_premakes\Glad\Glad.vcxproj">
       <Project>{BDD6857C-A90D-870D-52FA-6C103E10030F}</Project>
     </ProjectReference>
-    <ProjectReference Include="vendor\SoLoud\SoLoud.vcxproj">
+    <ProjectReference Include="vendor\_premakes\SoLoud\SoLoud.vcxproj">
       <Project>{5B657FD1-4707-AAA7-30C2-BDFB1C0331F8}</Project>
     </ProjectReference>
-    <ProjectReference Include="vendor\ImGui\ImGui.vcxproj">
+    <ProjectReference Include="vendor\_premakes\ImGui\ImGui.vcxproj">
       <Project>{C0FF640D-2C14-8DBE-F595-301E616989EF}</Project>
     </ProjectReference>
   </ItemGroup>
