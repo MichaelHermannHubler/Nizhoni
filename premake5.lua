@@ -1,5 +1,6 @@
 workspace "Nizhoni"
 	architecture "x64"
+	startproject "Sandbox"
 
 	configurations {
 		"Debug",
